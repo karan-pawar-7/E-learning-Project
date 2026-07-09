@@ -8,18 +8,20 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 const Courses = () => {
   return (
     <>
-      <div className='h-screen'>
+      <div className='h-full bg-pink-50'>
         <div className=' text-center pt-20 text-2xl'>
-          <button className='text-purple-800 text-[15px] font-bold rounded-2xl bg-gray-100 px-3 py-1'>Featured Courses</button>
+          <button className='text-purple-800 text-[15px] rounded-2xl bg-white px-5 py-2'>Featured Courses</button>
           <h1 className='text-5xl font-bold pt-3'>Explore Our Most Popular Courses</h1>
           <p className='text-[20px] pt-3 text-gray-700'>Learn from industry experts and gain practical skills that will advance your career</p>
         </div >
 
-        <div className='flex gap-8 p-8'>
-          <div className='shadow-2xl rounded-4xl'>
-            <img className='rounded-t-4xl h-75 w-250 ' src="./public/web dev.jpg" alt="" />
+        <div className='flex gap-8 p-8 overflow-hidden '>
+          <div className='transition-all duration-500 hover:shadow-2xl rounded-4xl bg-white '>
+            <div className="w-115 h-75 overflow-hidden rounded-t-4xl shadow-lg cursor-pointer">
+              <img className='w-full h-full object-cover transition-transform duration-500 hover:scale-110 ' src="./public/web dev.jpg" alt="" />
+            </div>
             <div className='flex flex-col gap-3'>
-              <p className='text-[20px] px-7 pt-7'>Complete Web Development Bootcamp 2026</p>
+              <p className='text-[20px] px-7 pt-7 transition-transform duration-500 hover:scale-105 hover:text-purple-600'>Complete Web Development Bootcamp 2026</p>
               <p className='px-7 text-gray-700'>Sarah Johnson</p>
               <div className='flex gap-7 px-7 pt-2'>
                 <p>  <FontAwesomeIcon icon={faStar} /> 4.9</p>
@@ -35,11 +37,12 @@ const Courses = () => {
           </div>
 
 
-          <div className='shadow-2xl rounded-4xl'>
-            <img className='rounded-t-4xl h-75 w-250' src="./public/data ana.jpg" alt="" />
-
+          <div className='transition-all duration-500 hover:shadow-2xl rounded-4xl bg-white'>
+            <div className="w-115 h-75 overflow-hidden rounded-t-4xl shadow-lg cursor-pointer">
+              <img className='w-full h-full object-cover transition-transform duration-500 hover:scale-110 ' src="./public/data ana.jpg" alt="" />
+            </div>
             <div className='flex flex-col gap-3'>
-              <p className='text-[20px] px-7 pt-7'>Data Analytics & Business Intelligence</p>
+              <p className='text-[20px] px-7 pt-7 transition-transform duration-500 hover:scale-105 hover:text-purple-600'>Data Analytics & Business Intelligence</p>
               <p className='px-7 text-gray-700'>Michael Chen</p>
               <div className='flex gap-7 px-7 pt-2'>
                 <p> <FontAwesomeIcon icon={faStar} /> 4.8</p>
@@ -55,12 +58,13 @@ const Courses = () => {
           </div>
 
 
-          <div className='shadow-2xl rounded-4xl'>
-            <img className='rounded-t-4xl h-75 w-250' src="./public/graphic.jpg" alt="" />
-
+          <div className='transition-all duration-500 hover:shadow-2xl rounded-4xl bg-white'>
+            <div className="w-115 h-75 overflow-hidden rounded-t-4xl shadow-lg cursor-pointer">
+              <img className='w-full h-full object-cover transition-transform duration-500 hover:scale-110 ' src="./public/graphic.jpg" alt="" />
+            </div>
             <div className='flex flex-col gap-3'>
 
-              <p className='text-[20px] px-7 pt-7'>Advanced Graphic Design Masterclass</p>
+              <p className='text-[20px] px-7 pt-7 transition-transform duration-500 hover:scale-105 hover:text-purple-600'>Advanced Graphic Design Masterclass</p>
               <p className='px-7 text-gray-700'>Emma Rodriguez</p>
               <div className='flex gap-7 px-7 pt-2'>
                 <p> <FontAwesomeIcon icon={faStar} /> 4.9</p>
@@ -72,16 +76,16 @@ const Courses = () => {
                 <h1 className='text-2xl font-bold'>$95</h1>
                 <button className='rounded-2xl bg-gradient-to-r from-violet-700 to-pink-500 text-white px-5 py-1 text-white'>Enroll Now</button>
               </div>
-             </div>
             </div>
           </div>
-          <div className='flex items-center justify-center pb-3'>
-            <button className='bg-white border border-gray-500 rounded-4xl px-5 py-2'>View All Courses</button>
-          </div>
         </div>
-      </>
+        <div className='flex items-center justify-center pb-3'>
+          <button className='bg-white border border-gray-500 rounded-4xl px-5 py-2'>View All Courses</button>
+        </div>
+      </div>
+    </>
 
-      )
+  )
 }
 
-      export default Courses
+export default Courses

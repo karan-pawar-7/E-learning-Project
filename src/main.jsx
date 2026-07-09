@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <BrowserRouter>
+    <BrowserRouter basename="/E-learning">
       <App />
     </BrowserRouter>
 

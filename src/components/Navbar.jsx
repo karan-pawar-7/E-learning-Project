@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +9,7 @@ const Navbar = () => {
         <div className="text-2xl font-bold bg-gradient-to-r from-violet-700 via-pink-500 to-orange-400 bg-clip-text text-transparent">Learnify</div>
         <ul className="flex gap-10 text-lg text-gray-600 ">
 
-          {/* <NavLink
+           <NavLink
             to="/" className={({ isActive }) =>isActive ? "text-pink-600 font-bold border-b-2 border-pink-600": "text-gray-700" }>
             Home
           </NavLink>
@@ -29,13 +28,7 @@ const Navbar = () => {
           <NavLink
             to="/pricing" className={({ isActive }) =>isActive ? "text-pink-600 font-bold border-b-2 border-pink-600": "text-gray-700" }>
             Pricing
-          </NavLink> */}
-
-          <NavLink to="/" className="hover:text-amber-300 transition">Home</NavLink> 
-          <NavLink to="/about" className="hover:text-amber-300 transition">About</NavLink>
-          <NavLink to="/courses" className="hover:text-amber-300 transition">Courses</NavLink>
-          <NavLink to="/instructors" className="hover:text-amber-300 transition">Instructors</NavLink>
-          <NavLink to="/pricing" className="hover:text-amber-300 transition">Pricing</NavLink>
+          </NavLink> 
 
         </ul>
         <div className="flex gap-7 items-center justify-center text-lg">

@@ -4,7 +4,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 const Pricing = () => {
   return (
     <>
-      <div className='h-full bg-pink-50'>
+      <div className='h-full bg-pink-50 py-10'>
         <div className='text-center  text-2xl pt-2'>
           <button className='text-purple-800 text-[15px] rounded-2xl bg-white px-5 py-2'>Flexible Pricing</button>
           <h1 className='text-5xl font-bold pt-3'>Choose Your Perfect Plan </h1>

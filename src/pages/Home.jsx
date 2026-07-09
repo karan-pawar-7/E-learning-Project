@@ -34,7 +34,7 @@ const Home = () => {
           </div>
         </div>
         <div className='flex items-stretch '>
-          <img className='flex h-150 w-170 rounded-2xl shadow-2xl' src="./public/e img.jpg" alt="" />
+          <img className='flex h-150 w-170 rounded-2xl shadow-2xl' src="./public/i6.png" alt="" />
         </div>
       </div>
     </>
