@@ -4,6 +4,8 @@ import About from "./pages/About";
 import Courses from "./pages/Courses";
 import Instructors from "./pages/Instructors";
 import Pricing from "./pages/Pricing";
+import NotFound from "./pages/NotFound";
+
 import { Routes, Route, Link } from "react-router-dom";
 
 
@@ -18,6 +20,7 @@ function App() {
         <Route path="courses" element={<Courses />} />
         <Route path="instructors" element={<Instructors />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
     </>

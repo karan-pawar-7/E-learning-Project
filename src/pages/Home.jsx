@@ -3,7 +3,7 @@ import React from 'react'
 const Home = () => {
   return (
     < >
-      <div className='h-lvh bg-pink-100 flex gap-55 items-center justify-center'>
+      <div className='h-lvh bg-pink-100 flex gap-25 items-center justify-center'>
 
 
         <div className="flex flex-col items-center justify-center gap-8">
@@ -33,8 +33,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className='flex items-center justify-end '>
-          <img className='flex h-150 w-150 rounded-2xl shadow-2xl' src="./public/e img.jpg" alt="" />
+        <div className='flex items-stretch '>
+          <img className='flex h-150 w-170 rounded-2xl shadow-2xl' src="./public/e img.jpg" alt="" />
         </div>
       </div>
     </>
