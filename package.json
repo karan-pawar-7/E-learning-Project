@@ -1,11 +1,22 @@
 {
-  "homepage": "https://karan-pawar-7.github.io/E-learning",
-  "name": "E lerning",
-  "private": true,
+  "name": "e-lerning",
   "version": "0.0.0",
+  "private": true,
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "homepage": "https://karan-pawar-7.github.io/E-learning",
+  "bugs": {
+    "url": "https://github.com/karan-pawar-7/E-learning-Project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karan-pawar-7/E-learning-Project.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
-    "predeploy": "vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",

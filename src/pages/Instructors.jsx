@@ -163,9 +163,7 @@ const Instructors = () => {
           </div>
 
         </div>
-        <div className='flex items-center justify-center pb-3'>
-          <button className='bg-white border border-gray-500 rounded-4xl px-5 py-2'>View All Courses</button>
-        </div>
+        
       </div>
     </>
 

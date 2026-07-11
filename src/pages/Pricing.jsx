@@ -47,7 +47,7 @@ const Pricing = () => {
             <h1 className='text-[23px] font-bold'>Pro</h1>
             <p className='text-gray-700 text-white'>Most popular for serious learners and <br /> professionals</p>
             <div className='flex items-end gap-2'>
-              <h1 className='text-6xl font-bold'>$79</h1>
+              <h1 className='text-6xl font-bold'>$99</h1>
               <p className='text-[20px] text-white'> /month</p>
             </div>
             <button className="rounded-4xl font-medium h-fit my-2  py-[10px] bg-white text-purple-700 ">Get Started</button>
