@@ -5,11 +5,16 @@ import Courses from "./pages/Courses";
 import Instructors from "./pages/Instructors";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import { useState } from "react";
+
 
 import { Routes, Route, Link } from "react-router-dom";
 
 
 function App() {
+
+  const [readMore, setReadMore] = useState(false);
 
   return (
     <>
@@ -21,8 +26,9 @@ function App() {
         <Route path="instructors" element={<Instructors />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Route path="/Login" element={<Login />} />
 
+      </Routes>
     </>
   );
 }
