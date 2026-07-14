@@ -125,7 +125,7 @@ const Login = () => {
           <div className="max-w-md mx-auto w-full">
 
             <h2 className="text-5xl font-bold text-center mt-8">
-              Welcome Back 👋
+              Welcome Back
             </h2>
 
             <p className="text-gray-500 text-center mt-3">
