@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,17 +9,22 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
+
+
   return (
     <>
       <nav
-        className={`flex justify-between items-center h-16 px-6 border-b sticky top-0 shadow-md z-50 transition-all duration-300 ${darkMode
-          ? "bg-gray-900 text-white border-gray-700"
-          : "bg-white text-gray-700 border-gray-300"
-          }`}
-      >
+        className={`flex items-center justify-between px-8 py-5 transition-all duration-300 ${darkMode
+            ? "bg-black text-white border-b border-white"
+            : "bg-white text-black shadow-lg shadow-black "
+          }`}      
+          >
+
         {/* Logo */}
         <div className="text-2xl font-bold bg-gradient-to-r from-violet-700 via-pink-500 to-orange-400 bg-clip-text text-transparent">
           Learnify
@@ -88,14 +94,11 @@ const Navbar = () => {
             icon={faMagnifyingGlass}
             className="text-xl cursor-pointer"
           />
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="px-4 py-2 rounded-full bg-purple-600 text-white"
-          >
-            {darkMode ? "☀️ Light" : "🌙 Dark"}
+          <button onClick={toggleTheme}>
+            {darkMode ? "☀ Light" : "🌙 Dark"}
           </button>
 
-           <NavLink
+          <NavLink
             to="/Login"
           >
             <button className="rounded-4xl font-medium text-gray-700 py-[10px] shadow px-[20px] border border-gray-200 bg-white hover:bg-gray-200 transition ">Sign In</button>

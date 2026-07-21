@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -7,6 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
+
+import { ThemeContext } from "../context/ThemeContext";
 
 const CourseData = [
   {
@@ -62,15 +64,27 @@ const CourseData = [
 const Courses = () => {
   const navigate = useNavigate();
 
+  const { darkMode } = useContext(ThemeContext);
+
   const [courses] = useState(CourseData);
   const [openCard, setOpenCard] = useState(null);
 
   return (
-    <div className="min-h-screen bg-pink-50">
+    <div
+      className={`min-h-screen transition-all duration-500 ${
+        darkMode ? "bg-gray-950 text-white" : "bg-pink-50 text-black"
+      }`}
+    >
       {/* Heading */}
 
       <div className="text-center pt-20">
-        <button className="text-purple-800 text-[15px] rounded-2xl bg-white px-5 py-2 shadow">
+        <button
+          className={`text-[15px] rounded-2xl px-5 py-2 shadow ${
+            darkMode
+              ? "bg-gray-800 text-white"
+              : "bg-white text-purple-800"
+          }`}
+        >
           Featured Courses
         </button>
 
@@ -78,7 +92,11 @@ const Courses = () => {
           Explore Our Most Popular Courses
         </h1>
 
-        <p className="text-xl pt-4 text-gray-700">
+        <p
+          className={`text-xl pt-4 ${
+            darkMode ? "text-gray-300" : "text-gray-700"
+          }`}
+        >
           Learn from industry experts and gain practical skills that will
           advance your career.
         </p>
@@ -90,7 +108,9 @@ const Courses = () => {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="w-[450px] bg-white rounded-3xl shadow-lg hover:shadow-2xl duration-300"
+            className={`w-[450px] rounded-3xl shadow-lg hover:shadow-2xl duration-300 ${
+              darkMode ? "bg-gray-900" : "bg-white"
+            }`}
           >
             {/* Image */}
 
@@ -105,13 +125,23 @@ const Courses = () => {
             {/* Content */}
 
             <div className="p-6">
-              <h2 className="text-2xl font-semibold hover:text-purple-600 duration-300">
+              <h2 className="text-2xl font-semibold hover:text-purple-500 duration-300">
                 {course.title}
               </h2>
 
-              <p className="text-gray-600 mt-2">{course.instructor}</p>
+              <p
+                className={`mt-2 ${
+                  darkMode ? "text-gray-300" : "text-gray-600"
+                }`}
+              >
+                {course.instructor}
+              </p>
 
-              <div className="flex justify-between mt-5 text-gray-700">
+              <div
+                className={`flex justify-between mt-5 ${
+                  darkMode ? "text-gray-300" : "text-gray-700"
+                }`}
+              >
                 <p>
                   <FontAwesomeIcon
                     icon={faStar}
@@ -129,18 +159,28 @@ const Courses = () => {
                 </p>
               </div>
 
-              <p className="mt-4">
+              <p
+                className={`mt-4 ${
+                  darkMode ? "text-gray-300" : "text-gray-700"
+                }`}
+              >
                 <FontAwesomeIcon icon={faClock} /> {course.hours}
               </p>
 
               {/* Price */}
 
-              <div className="flex justify-between items-center mt-6 border-t pt-5">
-                <h1 className="text-3xl font-bold text-purple-700">
+              <div
+                className={`flex justify-between items-center mt-6 pt-5 ${
+                  darkMode
+                    ? "border-t border-gray-700"
+                    : "border-t border-gray-200"
+                }`}
+              >
+                <h1 className="text-3xl font-bold text-purple-600">
                   {course.price}
                 </h1>
 
-                <button className="bg-gradient-to-r from-violet-700 to-pink-500 text-white px-5 py-2 rounded-xl">
+                <button className="bg-gradient-to-r from-violet-700 to-pink-500 text-white px-5 py-2 rounded-xl hover:scale-105 transition">
                   Enroll Now
                 </button>
               </div>
@@ -154,12 +194,35 @@ const Courses = () => {
                 >
                   View Full Details
                 </button>
+
+                <button
+                  onClick={() =>
+                    setOpenCard(
+                      openCard === course.id ? null : course.id
+                    )
+                  }
+                  className={`rounded-xl py-2 transition ${
+                    darkMode
+                      ? "bg-gray-700 hover:bg-gray-600 text-white"
+                      : "bg-gray-200 hover:bg-gray-300 text-black"
+                  }`}
+                >
+                  {openCard === course.id
+                    ? "Hide Details"
+                    : "Show Details"}
+                </button>
               </div>
 
               {/* Details */}
 
               {openCard === course.id && (
-                <div className="mt-5 bg-purple-50 rounded-xl p-4 space-y-2">
+                <div
+                  className={`mt-5 rounded-xl p-4 space-y-2 ${
+                    darkMode
+                      ? "bg-gray-800 text-gray-200"
+                      : "bg-purple-50"
+                  }`}
+                >
                   <p>
                     <strong>Level:</strong> {course.level}
                   </p>
@@ -187,7 +250,7 @@ const Courses = () => {
       <div className="flex justify-center pb-10">
         <button
           onClick={() => setOpenCard(null)}
-          className="bg-gradient-to-r from-violet-700 via-pink-500 to-orange-400 text-white px-6 py-3 rounded-full"
+          className="bg-gradient-to-r from-violet-700 via-pink-500 to-orange-400 text-white px-6 py-3 rounded-full hover:scale-105 transition"
         >
           Reset Details
         </button>
